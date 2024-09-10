@@ -4,6 +4,13 @@ public abstract class Person {
     private String id;
 
     public Person(String name, String id) {
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("Name cannot be null or empty");
+        }
+        if (id == null || id.isEmpty()) {
+            throw new IllegalArgumentException("ID cannot be null or empty");
+        }
+        
         this.name = name;
         this.id = id;
     }

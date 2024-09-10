@@ -20,7 +20,7 @@ public class Book {
 
     
 
-    public String getbookId() {
+    public String getBookId() {
         return bookId;
     }
 
@@ -41,6 +41,9 @@ public class Book {
     }
 
     public void setTitle(String title) {
+        if (title == null || title.trim().isEmpty()) {
+            throw new IllegalArgumentException("Title cannot be null or empty");
+        }
         this.title = title;
     }
 

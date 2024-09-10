@@ -47,12 +47,12 @@ public class Library{
 
     public void findBookByTitle(String title) {
         boolean bookFound = false;
-        for (Book books : this.books) {
-            if(title.trim().equalsIgnoreCase(books.getTitle().trim())) {
+        for (Book book : books) {
+            if(title.trim().equalsIgnoreCase(book.getTitle().trim())) {
                 bookFound = true;
-                System.out.println(books);
+                System.out.println(book);
             }
-            break;
+        
         }
         if (bookFound) {
             System.out.println("The book has been found.");
