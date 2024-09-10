@@ -23,7 +23,7 @@ public class Library{
     }
 
 
-    public void addUser(User user) {;
+    public void addUser(User user) {
         users.add(user);
     }
 
@@ -54,7 +54,7 @@ public class Library{
             }
             break;
         }
-        if (bookFound == true) {
+        if (bookFound) {
             System.out.println("The book has been found.");
         } else {
             System.out.println("The book was not found.");
@@ -76,7 +76,7 @@ public class Library{
         
         User first = new User("Michael", "AE12", firstBooks);
         User second = new User("Raphael", "B12", secondBooks);
-        User third = new User("Jessica", "A315", thirdBooks);
+        User third = new User("Jessica", "A315");
 
 
         Book book1 = new Book("A213", "DaVinci Code", "Dan Brown", true );
@@ -85,10 +85,10 @@ public class Library{
         Book book4 = new Book("A216", "Orange tree", "Dan Brown", true );
 
         
-        Library adventure_road = new Library(books, users);
-
-        Librarian mum = new Librarian("Gloria Udo", "GU2001", adventure_road);
-
+        Library adventure_road = new Library(books, users); 
+ 
+        Librarian mum = new Librarian("Gloria Udo", "GU2001", adventure_road); 
+ 
         mum.addBook(book1);
         mum.addBook(book2);
         mum.addBook(book3);
@@ -100,20 +100,20 @@ public class Library{
 
         adventure_road.listAvailableBooks();
 
-        first.borrowBook(book2);
+        //first.borrowBook(book2);
         first.borrowBook(book1);
         first.borrowBook(book3);
         
 
         third.borrowBook(book2);
 
-        adventure_road.findBookByTitle("davinci code");
+        adventure_road.findBookByTitle("digital fortress");
         
         
-        System.out.println(first);
+        /*System.out.println(first);
         System.out.println(second);
         System.out.println(third);
-        System.out.println(mum);
+        System.out.println(mum);*/
         
     }
 }

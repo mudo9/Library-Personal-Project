@@ -11,6 +11,7 @@ public class User extends Person {
 
     public User(String name, String id) {
         super(name, id);  
+        this.borrowedBooks = new ArrayList<>();
     }
 
     public User(String name, String id, List<Book> borrowedBooks) {
@@ -24,9 +25,12 @@ public class User extends Person {
     }
 
     public void borrowBook(Book book) {
-        while (book.getIsAvailable() == true){
+        if (book.getIsAvailable()){
             borrowedBooks.add(book);
+            System.out.println(getName() + " has borrowed " + book.getTitle());
             book.setIsAvailable(false);
+        }else{
+            System.out.println(book.getTitle() + " is unavailable.");
         }
         
     }
@@ -34,8 +38,11 @@ public class User extends Person {
     
 
     public void returnBook(Book book) {
-        borrowedBooks.remove(book);
-        book.setIsAvailable(true);
+        if(borrowedBooks.contains(book)) {
+            borrowedBooks.remove(book);
+            book.setIsAvailable(true);
+        }
+        
     }
     
     
